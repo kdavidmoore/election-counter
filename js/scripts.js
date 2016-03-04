@@ -1,7 +1,18 @@
+// these variables only need to be set once
+var endTime = new Date(1478606400000);
+var endTimeStamp = Date.parse(endTime); // parses the time into Linux timestamp */
+/* var endTimeStamp = Date.now() + 10000; */
+
+var timer = document.getElementById('countdown-wrapper');
+var weeks = document.getElementById('weeks'); // can also use var weeks = timer.querySelector("#weeks");
+var days = document.getElementById('days');
+var hours = document.getElementById('hours');
+var minutes = document.getElementById('minutes');
+var seconds = document.getElementById('seconds');
+
+// functions which will need to be called continuously
 function timeTillDoomsday() {
-	var endTime = new Date(2016,11,8,7,0,0,0);
-	var now = new Date();
-	var endTimeStamp = Date.parse(endTime); // parses the time into milliseconds so the difference can be determined
+	var now = new Date(); // gets the current date/time, because we didn't pass any arguments
 	var nowTimeStamp = Date.parse(now);
 	var timeDifference = endTimeStamp - nowTimeStamp;
 	var timeStampInSeconds = timeDifference / 1000;
@@ -17,31 +28,24 @@ function timeTillDoomsday() {
 		days: days,
 		hours: hours,
 		minutes: minutes,
-		seconds: seconds
+		seconds: seconds,
+		remaining: timeDifference
 	};
 
-	return timeObject;
+	return timeObject; // after a return statement, the function 'hangs up'
 };
 
 function initTimer() {
-	var timer = document.getElementById('countdown-wrapper');
-	var weeks = document.getElementById('weeks'); // can also use var weeks = timer.querySelector("#weeks");
-	var days = document.getElementById('days');
-	var hours = document.getElementById('hours');
-	var minutes = document.getElementById('minutes');
-	var seconds = document.getElementById('seconds');
-
 	var timeObjectReturned = timeTillDoomsday(); // gets the timeObject returned by timeTillDoomsday()
-	weeks.innerHTML = timeObjectReturned.weeks;
-	days.innerHTML = timeObjectReturned.days;
-	hours.innerHTML = timeObjectReturned.hours;
-	minutes.innerHTML = timeObjectReturned.minutes;
-	seconds.innerHTML = timeObjectReturned.seconds;
+	if (timeObjectReturned.remaining > 1) { // stops updating when the end date is reached
+		weeks.innerHTML = timeObjectReturned.weeks;
+		days.innerHTML = timeObjectReturned.days;
+		hours.innerHTML = timeObjectReturned.hours;
+		minutes.innerHTML = timeObjectReturned.minutes;
+		seconds.innerHTML = timeObjectReturned.seconds;
+	}
 };
 
-/* function updateTimer() {
-
-}; */
-
+// make the timer update every half-second
 initTimer();
-setInterval(initTimer,1000);
+window.setInterval(initTimer, 500);
