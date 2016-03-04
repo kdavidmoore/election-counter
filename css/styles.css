@@ -12,11 +12,7 @@ h1 {
 h2 {
 	color: #000;
 	font-size: 40px;
-}
-
-#countdown-wrapper {
-	color: #fff;
-	font-size: 30px;
+	margin-bottom: 40px;
 }
 
 #countdown-wrapper .time-wrapper {
@@ -31,6 +27,9 @@ h2 {
 	border-radius: 3px;
 	background-color: #5c8a8a;
 	display: inline-block;
+	color: #fff;
+	font-size: 30px;
+
 }
 
 .time-text {

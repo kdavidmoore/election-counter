@@ -39,8 +39,9 @@ function initTimer() {
 	seconds.innerHTML = timeObjectReturned.seconds;
 };
 
-function updateTimer() {
+/* function updateTimer() {
 
-};
+}; */
 
 initTimer();
+setInterval(initTimer,1000);
