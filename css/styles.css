@@ -29,10 +29,20 @@ h2 {
 	display: inline-block;
 	color: #fff;
 	font-size: 30px;
-
 }
 
 .time-text {
 	padding-top: 5px;
 	font-size: 20px;
+}
+
+#vote {
+	display: none;
+	margin-top: 40px;
+}
+
+#vote img {
+	width: 40%;
+	border: 10px solid #fff;
+	border-radius: 10px;
 }

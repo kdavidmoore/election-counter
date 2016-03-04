@@ -1,4 +1,4 @@
-# A countdown to 2016 election day done in native JavaScript
+# A countdown to 7:00 am EST on November 8, 2016, written in native JavaScript
 
 This counter does not use any jQuery plugins or dependencies.
 

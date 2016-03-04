@@ -1,6 +1,7 @@
 // these variables only need to be set once
+var voteIcon = document.getElementById("vote");
 var endTime = new Date(1478606400000);
-var endTimeStamp = Date.parse(endTime); // parses the time into Linux timestamp */
+var endTimeStamp = Date.parse(endTime); // parses the time into Linux timestamp
 /* var endTimeStamp = Date.now() + 10000; */
 
 var timer = document.getElementById('countdown-wrapper');
@@ -43,6 +44,8 @@ function initTimer() {
 		hours.innerHTML = timeObjectReturned.hours;
 		minutes.innerHTML = timeObjectReturned.minutes;
 		seconds.innerHTML = timeObjectReturned.seconds;
+	} else {
+		voteIcon.style.display = "block";
 	}
 };
 
