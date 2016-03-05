@@ -1,7 +1,11 @@
-# A countdown to 7:00 am EST on November 8, 2016, written in native JavaScript
+# Choose-your-own countdown
 
-This counter does not use any jQuery plugins or dependencies.
+## Homework for weekend of March 4, 2016
+
+This countdown timer allows the user to choose his own end date. The project was written in native JavaScript.
 
 ##Demo here
 
 ...insert link to portfolio here as soon as it's up
+
+[I learned this at DigitalCrafts](https://www.digitalcrafts.com)
