@@ -13,11 +13,15 @@ var seconds = document.getElementById('seconds');
 
 // get the end date and time from the form
 function getEndTime() {
-	var formYear = parseInt(document.getElementById('form-year'));
-	var formMonth = parseInt(document.getElementById('form-month')) - 1;
-	var formDay = parseInt(document.getElementById('form-day')) - 1;
-	var formHour = parseInt(document.getElementById('form-hour'));
-	var endTime = new Date(formYear,formMonth,formDay,formHour);
+	var yearField = document.getElementById('form-year');
+	var year = parseInt(yearField.value);
+	var monthField = document.getElementById('form-month');
+	var month = parseInt(monthField.value) - 1;
+	var dayField = document.getElementById('form-day');
+	var day = parseInt(dayField.value);
+	var hourField = document.getElementById('form-hour');
+	var hour = parseInt(hourField.value);
+	var endTime = new Date(year,month,day,hour);
 	var endTimeStamp = Date.parse(endTime);
 
 	return endTimeStamp;
