@@ -1,12 +1,13 @@
 <!DOCTYPE html>
     <head>
-        <title>Election Countdown</title>
+        <title>Countdown Timer</title>
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
     <body>
-    	<h1>Countdown until Election Day</h1>
-    	<h2>Trump or Hillary?</h2>
+    	<h1>Countdown Timer</h1>
+    	<h2>Choose your own countdown</h2>
+
     	<div id="countdown-wrapper">
     		<div class="time-wrapper">
     			<div id="weeks"></div>
@@ -29,9 +30,18 @@
     			<div class="time-text">Seconds</div>
     		</div>
     	</div>
-    	<div id="vote">
+
+        <div id="form-wrapper" >
+            <input id="form-year" type="text" placeholder="Year">
+            <input id ="form-month" type="text" placeholder="Month">
+            <input id="form-day" type="text" placeholder="Day">
+            <input id="form-hour" type="text" placeholder="Hour">
+            <input id="form-button" type="button" value="Start Counting" onclick="initTimerInterval();">
+        </div>
+    	
+        <!-- <div id="vote">
     		<img src="https://www.wpclipart.com/holiday/election_Day/vote_word/vote.png">
-    	</div>
+    	</div> -->
     
     <script type="text/javascript" src="js/scripts.js"></script>
     </body>

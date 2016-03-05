@@ -1,8 +1,8 @@
 // these variables only need to be set once
-var voteIcon = document.getElementById("vote");
+/* var voteIcon = document.getElementById("vote");
 var endTime = new Date(1478606400000);
 var endTimeStamp = Date.parse(endTime); // parses the time into Linux timestamp
-/* var endTimeStamp = Date.now() + 10000; */
+var endTimeStamp = Date.now() + 10000; */
 
 var timer = document.getElementById('countdown-wrapper');
 var weeks = document.getElementById('weeks'); // can also use var weeks = timer.querySelector("#weeks");
@@ -11,10 +11,22 @@ var hours = document.getElementById('hours');
 var minutes = document.getElementById('minutes');
 var seconds = document.getElementById('seconds');
 
-// functions which will need to be called continuously
+// get the end date and time from the form
+function getEndTime() {
+	var formYear = parseInt(document.getElementById('form-year'));
+	var formMonth = parseInt(document.getElementById('form-month')) - 1;
+	var formDay = parseInt(document.getElementById('form-day')) - 1;
+	var formHour = parseInt(document.getElementById('form-hour'));
+	var endTime = new Date(formYear,formMonth,formDay,formHour);
+	var endTimeStamp = Date.parse(endTime);
+
+	return endTimeStamp;
+};
+
 function timeTillDoomsday() {
 	var now = new Date(); // gets the current date/time, because we didn't pass any arguments
 	var nowTimeStamp = Date.parse(now);
+	var endTimeStamp = getEndTime();
 	var timeDifference = endTimeStamp - nowTimeStamp;
 	var timeStampInSeconds = timeDifference / 1000;
 
@@ -44,11 +56,14 @@ function initTimer() {
 		hours.innerHTML = timeObjectReturned.hours;
 		minutes.innerHTML = timeObjectReturned.minutes;
 		seconds.innerHTML = timeObjectReturned.seconds;
-	} else {
+	} /* else {
 		voteIcon.style.display = "block";
-	}
+	} */
 };
 
 // make the timer update every half-second
-initTimer();
-window.setInterval(initTimer, 500);
+function initTimerInterval() {
+	window.setInterval(initTimer, 500);
+	var testTime = getEndTime();
+	console.dir(testTime);
+}
