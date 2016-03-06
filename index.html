@@ -5,38 +5,41 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
     <body>
-    	<h1>Countdown Timer</h1>
-    	<h2>Choose your own countdown</h2>
+    	
+        <div id="header">
+            <h1>COUNTDOWN TIMER</h1>
+    	   <h2>CHOOSE YOUR OWN COUNTDOWN</h2>
+        </div>
 
     	<div id="countdown-wrapper">
-    		<div class="time-wrapper">
-    			<div id="weeks"></div>
-    			<div class="time-text">Weeks</div>
-    		</div>
-    		<div class="time-wrapper">
-    			<div id="days"></div>
-    			<div class="time-text">Days</div>
-    		</div>
-    		<div class="time-wrapper">
-    			<div id="hours"></div>
-    			<div class="time-text">Hours</div>
-    		</div>
-    		<div class="time-wrapper">
-    			<div id="minutes"></div>
-    			<div class="time-text">Minutes</div>
-    		</div>
-    		<div class="time-wrapper">
-    			<div id="seconds"></div>
-    			<div class="time-text">Seconds</div>
-    		</div>
+        	<div class="time-wrapper">
+                <div class="time-text">WEEKS</div>
+                <div class="digits" id="weeks"></div>
+        	</div>
+        	<div class="time-wrapper">
+                <div class="time-text">DAYS</div>
+        		<div class="digits" id="days"></div>
+        	</div>
+        	<div class="time-wrapper">
+                <div class="time-text">HOURS</div>
+        		<div class="digits" id="hours"></div>
+        	</div>
+        	<div class="time-wrapper">
+                <div class="time-text">MINUTES</div>
+        		<div class="digits" id="minutes"></div>
+        	</div>
+        	<div class="time-wrapper">
+                <div class="time-text">SECONDS</div>
+        		<div class="digits" id="seconds"></div>
+        	</div>
     	</div>
 
         <div id="form-wrapper" >
-            <input id="form-year" type="text" placeholder="Year">
-            <input id ="form-month" type="text" placeholder="Month">
-            <input id="form-day" type="text" placeholder="Day">
-            <input id="form-hour" type="text" placeholder="Hour">
-            <input id="form-button" type="button" value="Start Counting" onclick="initTimerInterval();">
+            <input id="form-year" type="text" placeholder="year">
+            <input id ="form-month" type="text" placeholder="month">
+            <input id="form-day" type="text" placeholder="day">
+            <input id="form-hour" type="text" placeholder="hour">
+            <input id="form-button" type="button" value="START COUNTING" onclick="initTimerInterval();">
         </div>
     	
         <!-- <div id="vote">
